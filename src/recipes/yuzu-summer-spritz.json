@@ -1,0 +1,64 @@
+{
+    "name": "Yuzu Summer Spritz",
+    "description": "A refreshing Japanese-inspired summer cocktail featuring bright yuzu citrus, sake, and cooling mint. Perfect for hot summer days with a distinctly Japanese twist.",
+    "github": "assistant",
+    "ingredients": [
+        {
+            "quantity": "2",
+            "measure": "oz",
+            "ingredient": "sake"
+        },
+        {
+            "quantity": "1",
+            "measure": "oz",
+            "ingredient": "yuzu juice"
+        },
+        {
+            "quantity": "1/2",
+            "measure": "oz",
+            "ingredient": "simple syrup"
+        },
+        {
+            "quantity": "4",
+            "measure": "oz",
+            "ingredient": "sparkling water"
+        },
+        {
+            "quantity": "6-8",
+            "measure": "leaves",
+            "ingredient": "fresh mint"
+        },
+        {
+            "quantity": "1",
+            "measure": "",
+            "ingredient": "cucumber slice"
+        },
+        {
+            "quantity": "1",
+            "measure": "cup",
+            "ingredient": "ice cubes"
+        }
+    ],
+    "directions": [
+        "Fill a tall glass with ice cubes.",
+        "Gently muddle 4-5 mint leaves in the bottom of the glass.",
+        "Add sake, yuzu juice, and simple syrup to the glass.",
+        "Stir gently to combine the ingredients.",
+        "Top with sparkling water and stir once more.",
+        "Garnish with remaining mint leaves and a cucumber slice.",
+        "Serve immediately while chilled and effervescent."
+    ],
+    "image": "yuzu-summer-spritz.jpg",
+    "keywords": [
+        "japanese",
+        "summer",
+        "sake",
+        "yuzu",
+        "refreshing",
+        "citrus",
+        "mint",
+        "sparkling",
+        "low-alcohol",
+        "vegan"
+    ]
+}
