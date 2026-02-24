@@ -137,22 +137,24 @@ export default {
     },
   },
   metaInfo() {
+    const metaTitle = this.drink.metaTitle || this.drink.name || 'Open Drinks';
+    const metaDescription =
+      this.drink.metaDescription || this.drink.description || 'Open Source Drink Recipes';
     return {
-      title: 'Open Drinks',
-      titleTemplate: `%s - ${this.drink.name}`,
+      title: metaTitle,
+      titleTemplate: '%s | Open Drinks',
       htmlAttrs: {
         lang: 'en',
       },
       meta: [
         {
           name: 'description',
-          content: this.drink.description,
+          content: metaDescription,
           vmid: 'description',
         },
         {
           property: 'og:title',
-          content: 'Open Drinks',
-          template: chunk => `${chunk} - ${this.drink.name}`,
+          content: metaTitle,
           vmid: 'og:title',
         },
         {
@@ -172,7 +174,7 @@ export default {
         },
         {
           property: 'og:description',
-          content: this.drink.description,
+          content: metaDescription,
           vmid: 'og:description',
         },
         {
@@ -187,12 +189,11 @@ export default {
         },
         {
           itemprop: 'name',
-          content: 'Open Drinks',
-          template: chunk => `${chunk} - ${this.drink.name}`,
+          content: this.drink.name,
         },
         {
           itemprop: 'description',
-          content: this.drink.description,
+          content: metaDescription,
         },
         {
           itemprop: 'image',
@@ -207,7 +208,7 @@ export default {
             '@type': 'Recipe',
             name: this.drink.name,
             url: `https://opendrinks.io${window.location.pathname}`,
-            description: this.drink.description,
+            description: metaDescription,
             image: `https://opendrinks.io${this.drink.img}`,
           },
         },
@@ -227,7 +228,8 @@ export default {
   },
   created() {
     this.getRecipe(this.name);
-    window.document.title = `Open Drinks - ${this.drink.name}`;
+    const metaTitle = this.drink.metaTitle || this.drink.name;
+    window.document.title = metaTitle ? `${metaTitle} | Open Drinks` : 'Open Drinks';
     this.getSimilarRecipes(this.name).then(data => {
       this.similarRecipes = data;
     });
