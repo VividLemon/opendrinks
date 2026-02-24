@@ -38,6 +38,12 @@ export default new Router({
       component: () => import('./views/Search.vue'),
     },
     {
+      path: '/shot-recipes',
+      alias: '/shot-recipes/',
+      name: 'shotRecipes',
+      component: () => import('./views/ShotRecipes.vue'),
+    },
+    {
       path: '/recipe/:id/print',
       name: 'printRecipe',
       component: () => import('./views/PrintRecipe.vue'),

@@ -4,7 +4,7 @@ const { SitemapStream, streamToPromise } = require('sitemap');
 
 const HOSTNAME = 'https://opendrinks.io';
 const SITEMAP_XML = 'dist/sitemap.xml';
-const PAGES = ['featured', 'random', 'explore', 'keywords', 'search'];
+const PAGES = ['featured', 'random', 'explore', 'keywords', 'search', 'shot-recipes'];
 
 const getRecipe = files => {
   const r = [];
