@@ -209,22 +209,37 @@ export default {
       return 'Drink';
     };
     const imageUrl = this.drink.img ? `https://opendrinks.io${this.drink.img}` : undefined;
+    const url = `https://opendrinks.io${window.location.pathname}`;
     return {
       title: metaTitle,
-      titleTemplate: title => `${title} | Open Drinks`,
-      htmlAttrs: { lang: 'en' },
+      titleTemplate: '%s | Open Drinks',
+      link: [{ rel: 'canonical', href: url }],
       meta: [
+        // Basic SEO
         { name: 'description', content: metaDescription },
+        // Open Graph
         { property: 'og:title', content: metaTitle },
         { property: 'og:type', content: 'article' },
+        { property: 'og:url', content: url },
         { property: 'og:site_name', content: 'Open Drinks' },
-        { property: 'og:url', content: `https://opendrinks.io${window.location.pathname}` },
+        { property: 'og:locale', content: 'en_US' },
         { property: 'og:description', content: metaDescription },
-        { property: 'og:image', content: imageUrl },
-        { property: 'og:image:alt', content: this.drink.name },
-        { itemprop: 'name', content: this.drink.name },
-        { itemprop: 'description', content: metaDescription },
-        { itemprop: 'image', content: imageUrl },
+        ...(imageUrl
+          ? [
+              { property: 'og:image', content: imageUrl },
+              { property: 'og:image:alt', content: metaTitle },
+            ]
+          : []),
+        // Twitter / X
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: metaTitle },
+        { name: 'twitter:description', content: metaDescription },
+        ...(imageUrl
+          ? [
+              { name: 'twitter:image', content: imageUrl },
+              { name: 'twitter:image:alt', content: metaTitle },
+            ]
+          : []),
       ],
       script: [
         {
@@ -233,7 +248,7 @@ export default {
             '@context': 'https://schema.org/',
             '@type': 'Recipe',
             name: this.drink.name,
-            url: `https://opendrinks.io${window.location.pathname}`,
+            url,
             description: metaDescription,
             image: imageUrl ? [imageUrl] : undefined,
             recipeIngredient,

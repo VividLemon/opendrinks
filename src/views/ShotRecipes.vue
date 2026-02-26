@@ -116,17 +116,23 @@ export default {
     const title = '50+ Best Shot Recipes (Easy Party & Bar Shots Guide)';
     const description =
       'Discover 50+ of the best shot recipes for parties and home bars. From sweet layered shots to strong classic shooters, find easy step-by-step recipes and ingredients.';
+    const url = `https://opendrinks.io${window.location.pathname}`;
     return {
       title,
-      titleTemplate: t => `${t} | Open Drinks`,
-      htmlAttrs: { lang: 'en' },
+      link: [{ rel: 'canonical', href: url }],
       meta: [
+        // Basic SEO
         { name: 'description', content: description },
+        // Open Graph
         { property: 'og:title', content: title },
         { property: 'og:type', content: 'website' },
-        { property: 'og:site_name', content: 'Open Drinks' },
-        { property: 'og:url', content: `https://opendrinks.io${window.location.pathname}` },
+        { property: 'og:url', content: url },
+        { property: 'og:locale', content: 'en_US' },
         { property: 'og:description', content: description },
+        // Twitter / X
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: title },
+        { name: 'twitter:description', content: description },
       ],
       script: [
         {

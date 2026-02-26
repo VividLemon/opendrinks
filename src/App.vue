@@ -61,8 +61,14 @@ export default {
   head() {
     return {
       title: 'Open Drinks',
+      titleTemplate: '%s | Open Drinks',
       htmlAttrs: { lang: 'en' },
-      meta: [{ name: 'description', content: 'Open Source Drink Recipes' }],
+      meta: [
+        { name: 'description', content: 'Open Source Drink Recipes' },
+        { property: 'og:site_name', content: 'Open Drinks' },
+        { property: 'og:locale', content: 'en_US' },
+        { name: 'twitter:card', content: 'summary' },
+      ],
     };
   },
 };
