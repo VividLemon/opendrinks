@@ -8,6 +8,7 @@ export default () => {
   };
 
   onMounted(() => {
+    handleResize()
     window.addEventListener('resize', handleResize);
   });
   onUnmounted(() => {
